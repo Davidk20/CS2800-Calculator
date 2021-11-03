@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>uk.ac.rhul.cs2800</groupId>
-	<artifactId>calculator</artifactId>
+	<artifactId>Calculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CS2800 Calculator</name>
 	<description>Calculator for the CS2800 Module</description>
