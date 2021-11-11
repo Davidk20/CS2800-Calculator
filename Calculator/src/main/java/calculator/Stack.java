@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @author David Kidd
  */
-public class Stack {
+public final class Stack {
   int size = 0;
   List<Entry> entries = new LinkedList<Entry>();
 
@@ -22,6 +22,8 @@ public class Stack {
   public Integer getSize() {
     return size;
   }
+
+  
 
 
   /**
