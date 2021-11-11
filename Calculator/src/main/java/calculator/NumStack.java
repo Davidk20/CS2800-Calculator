@@ -14,7 +14,13 @@ public class NumStack {
    * The stack being protected by the facade {@code NumStack}.
    */
   Stack numStack = new Stack();
-
+  
+  
+  /**
+   * Returns the size of the stack.
+   *
+   * @return The size of the stack.
+   */
   public Integer getSize() {
     return numStack.getSize();
   }
