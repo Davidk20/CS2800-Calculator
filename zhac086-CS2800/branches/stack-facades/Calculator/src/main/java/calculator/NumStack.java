@@ -3,8 +3,8 @@ package calculator;
 import java.util.EmptyStackException;
 
 /**
- * Class representation of a Stack of numbers. Used as a facade to hide unnecessary constructors and
- * methods that are not used by a stack involving .
+ * Class representation of a Stack of Numbers. Since the Polish Evaluation only uses a
+ * Stack of numerical values, we provide a facade to hide details.
  *
  * @author David Kidd
  */
