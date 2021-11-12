@@ -62,7 +62,6 @@ public class NumStackTest {
    * that the type of the returned variable is a {@code Float}. It is not necessary to check whether
    * the size of the stack has decreased correctly as this will already be handled by
    * {@code StackTest}.
-   *
    */
   @Test
   public void popTest() {
@@ -78,21 +77,7 @@ public class NumStackTest {
   }
 
   /**
-   * Test 5 - Test written to confirm that adding multiple elements to the stack returns a correctly
-   * sized stack.
-   */
-  @Test
-  public void multiplePushTest() {
-    testNumStack.push(1.0f);
-    testNumStack.push(1.1f);
-    testNumStack.push(1.2f);
-    testNumStack.push(1.3f);
-    Assertions.assertEquals(4, testNumStack.getSize());
-  }
-
-
-  /**
-   * Test 6 - Test written to check that, when a series of floats are pushed onto the stack, that
+   * Test 5 - Test written to check that, when a series of floats are pushed onto the stack, that
    * the correct entry is popped off when called in the method.
    */
   @Test
@@ -112,7 +97,7 @@ public class NumStackTest {
   }
 
   /**
-   * Test 7 - Test written to check that the correct order of the stack is still followed after
+   * Test 6 - Test written to check that the correct order of the stack is still followed after
    * pushing and popping to and from the stack. This checks that a user can remove any number of
    * entries from a stack and also add any number and the stack will still return the correct
    * ordered element.

@@ -21,7 +21,7 @@ public class NumStack {
    *
    * @return The size of the stack.
    */
-  public Integer getSize() {
+  private Integer getSize() {
     return numStack.getSize();
   }
 
@@ -55,8 +55,8 @@ public class NumStack {
     try {
       return numStack.pop().getNumber();
     } catch (InvalidEntryTypeException e) {
-      return Float.POSITIVE_INFINITY; // This case never occurs as NumStack controls all inputs of
-                                      // the stack.
+      return Float.POSITIVE_INFINITY; 
+      // This case never occurs as NumStack controls all inputs of the stack.
     }
   }
 
