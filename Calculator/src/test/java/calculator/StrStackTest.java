@@ -25,7 +25,7 @@ public class StrStackTest {
   public void initialiseStrStack() {
     testStrStack = new StrStack();
   }
-  
+
   /**
    * Test 1 - Test written to check that when a new {@code StrStack} is initialised, that so to is
    * the {@code Stack} that it is using behind the facade. This tests the {@code isEmpty} method as
@@ -35,7 +35,7 @@ public class StrStackTest {
   public void initialiseEmptyStackTest() {
     Assertions.assertEquals(true, testStrStack.isEmpty());
   }
- 
+
   /**
    * Test 2 - Test written to check that when a {@code String} is pushed onto the stack, this is
    * accepted and corresponds to an increase of the size of the stack. This means that the isEmpty()
@@ -46,7 +46,7 @@ public class StrStackTest {
     testStrStack.push("string");
     Assertions.assertEquals(false, testStrStack.isEmpty());
   }
-  
+
   /**
    * Test 3 - Test written to check that when {@code pop()} is attempted on an empty stack, the
    * {@code StackEmptyException} is thrown.
@@ -55,7 +55,7 @@ public class StrStackTest {
   public void emptyStackPopTest() throws EmptyStackException {
     Assertions.assertThrows(EmptyStackException.class, () -> testStrStack.pop());
   }
-  
+
   /**
    * Test 4 - Test written to check that an entry in the {@code Stack} is correctly returned and
    * that the type of the returned variable is a {@code String}. It is not necessary to check
@@ -74,7 +74,7 @@ public class StrStackTest {
       Assertions.fail(e);
     }
   }
-  
+
   /**
    * Test 5 - Test written to check that, when a series of Strings are pushed onto the stack, that
    * the correct entry is popped off when called in the method.
@@ -94,7 +94,7 @@ public class StrStackTest {
       Assertions.fail(e);
     }
   }
-  
+
   /**
    * Test 6 - Test written to check that the correct order of the stack is still followed after
    * pushing and popping to and from the stack. This checks that a user can remove any number of
@@ -124,8 +124,19 @@ public class StrStackTest {
       Assertions.fail(e);
     }
   }
-  
+
   /**
    * Test 7 - Test written to check that {@code StrStack} correctly reverses the order of its stack.
+   * When a stack (a, b, c, d) is passed in, it should return the stack (a, b, c, d) when popped. as
+   * it would usually return (d, c, b, a) when popped but this is reversed in this instance.
    */
+  @Test
+  public void reversalTest() {
+    testStrStack.push("a");
+    testStrStack.push("b");
+    testStrStack.push("c");
+    testStrStack.push("d");
+    testStrStack.reverse();
+    Assertions.assertEquals("a", testStrStack.pop());
+  }
 }
