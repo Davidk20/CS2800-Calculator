@@ -1,5 +1,6 @@
 package calculator;
 
+import java.util.EmptyStackException;
 
 /**
  * Class representation of a Stack of Symbols (Operators). Since the shunting algorithm only uses a
@@ -19,7 +20,7 @@ public class OpStack {
    *
    * @return The size of the stack.
    */
-  public int getSize() {
+  private int getSize() {
     return this.opStack.getSize();
   }
   
@@ -40,6 +41,23 @@ public class OpStack {
    */
   public void push(Symbol symbol) {
     opStack.push(new Entry(symbol));
+  }
+  
+  
+  /**
+   * Returns and removes the top {@code Symbol} in the stack. Uses the method contained in
+   * {@code Stack}.
+   *
+   * @return The symbol on top of the stack.
+   * @throws EmptyStackException Thrown if the stack is empty.
+   */
+  public Symbol pop() throws EmptyStackException {
+    try {
+      return opStack.pop().getSymbol();
+    } catch (InvalidEntryTypeException e) {
+      return Symbol.INVALID; 
+      // This case never occurs as OpStack controls all inputs of the stack.
+    }
   }
 
 }
