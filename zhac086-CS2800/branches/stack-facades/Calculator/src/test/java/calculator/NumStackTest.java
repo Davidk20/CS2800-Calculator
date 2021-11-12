@@ -12,6 +12,9 @@ import org.junit.jupiter.api.Test;
  *
  */
 public class NumStackTest {
+  /**
+   * Instance of {@code NumStack} used for testing.
+   */
   private static NumStack testNumStack;
 
 

@@ -12,6 +12,9 @@ import org.junit.jupiter.api.Test;
  *
  */
 public class OpStackTest {
+  /**
+   * Instance of {@code OpStack} used for testing.
+   */
   private static OpStack testOpStack;
 
 
