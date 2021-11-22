@@ -138,5 +138,8 @@ public class StrStackTest {
     testStrStack.push("d");
     testStrStack.reverse();
     Assertions.assertEquals("a", testStrStack.pop());
+    Assertions.assertEquals("b", testStrStack.pop());
+    Assertions.assertEquals("c", testStrStack.pop());
+    Assertions.assertEquals("d", testStrStack.pop());
   }
 }
