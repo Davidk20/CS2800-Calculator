@@ -1,0 +1,48 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'8'
+-sourcepath
+'/media/davidkidd/Storage/Projects/eclipse/Calculator/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2021. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'CS2800 Calculator 0.0.1-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' '/media/davidkidd/Storage/Projects/eclipse/Calculator/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'CS2800 Calculator 0.0.1-SNAPSHOT API'
+calculator
+/media/davidkidd/Storage/Projects/eclipse/Calculator/src/main/java = 1635960759185
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/allclasses-index.html = 1635962480034
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/allpackages-index.html = 1635962480036
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/constant-values.html = 1635960760153
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/deprecated-list.html = 1635960760158
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/element-list = 1635962479983
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/help-doc.html = 1635962480061
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/index-all.html = 1635962480051
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/index.html = 1635962480053
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/javadoc.sh = 1635962446301
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/jquery-ui.overrides.css = 1635962480085
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/member-search-index.js = 1635962480038
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/module-search-index.js = 1635962480037
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/overview-tree.html = 1635962480023
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/package-search-index.js = 1635962480037
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/script.js = 1635962480064
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/search.js = 1635962480066
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/serialized-form.html = 1635962480000
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/stylesheet.css = 1635962480063
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/tag-search-index.js = 1635962480038
+/media/davidkidd/Storage/Projects/eclipse/Calculator/target/site/apidocs/type-search-index.js = 1635962480037
