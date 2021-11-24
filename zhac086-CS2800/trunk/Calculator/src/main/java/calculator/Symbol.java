@@ -47,4 +47,20 @@ public enum Symbol {
   public String toString() {
     return symbolRef;
   }
+
+  /**
+   * Reversal of the {@code toString} method. Takes in a string representation of a symbol and
+   * iterates through the {@code Symbol.values()} String representation until a match is found.
+   *
+   * @param symbol The {@code String} representation of the symbol to find
+   * @return The {@code Symbol} representation of the queried String.
+   */
+  public static Symbol toSymbol(String symbol) {
+    for (Symbol s : Symbol.values()) {
+      if (s.toString().equals(symbol)) {
+        return s;
+      }
+    }
+    return Symbol.INVALID;
+  }
 }

@@ -6,25 +6,25 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Class designed to test the {@code NumStack} class.
+ * Class designed to test the {@code OpStack} class.
  *
  * @author David Kidd
  *
  */
-public class NumStackTest {
+public class OpStackTest {
   /**
-   * Instance of {@code NumStack} used for testing.
+   * Instance of {@code OpStack} used for testing.
    */
-  private static NumStack testNumStack;
+  private static OpStack testOpStack;
 
 
   /**
-   * Initialises the {@code NumStack} as a new Stack before each test so that tests are running on a
+   * Initialises the {@code OpStack} as a new Stack before each test so that tests are running on a
    * clean stack.
    */
   @BeforeEach
-  public void initialiseNumStack() {
-    testNumStack = new NumStack();
+  public void initialiseOpStack() {
+    testOpStack = new OpStack();
   }
 
 
@@ -35,42 +35,40 @@ public class NumStackTest {
    */
   @Test
   public void initialiseEmptyStackTest() {
-    Assertions.assertEquals(true, testNumStack.isEmpty());
+    Assertions.assertEquals(true, testOpStack.isEmpty());
   }
 
   /**
-   * Test 2 - Test written to check that when a value of type {@code Float} is pushed onto the
-   * stack, this is accepted and corresponds to an increase of the size of the stack. This means
-   * that the isEmpty() method should now return false.
+   * Test 2 - Test written to check that when a {@code Symbol} is pushed onto the stack, this is
+   * accepted and corresponds to an increase of the size of the stack. This means that the isEmpty()
+   * method should now return false.
    */
   @Test
   public void checkNonEmptyStackTest() {
-    testNumStack.push(1.2f);
-    Assertions.assertEquals(false, testNumStack.isEmpty());
+    testOpStack.push(Symbol.LEFT_BRACKET);
+    Assertions.assertEquals(false, testOpStack.isEmpty());
   }
-
 
   /**
    * Test 3 - Test written to check that when {@code pop()} is attempted on an empty stack, the
    * {@code StackEmptyException} is thrown.
-   *
    */
   @Test
   public void emptyStackPopTest() throws EmptyStackException {
-    Assertions.assertThrows(EmptyStackException.class, () -> testNumStack.pop());
+    Assertions.assertThrows(EmptyStackException.class, () -> testOpStack.pop());
   }
 
   /**
    * Test 4 - Test written to check that an entry in the {@code Stack} is correctly returned and
-   * that the type of the returned variable is a {@code Float}. It is not necessary to check whether
-   * the size of the stack has decreased correctly as this will already be handled by
+   * that the type of the returned variable is a {@code Symbol}. It is not necessary to check
+   * whether the size of the stack has decreased correctly as this will already be handled by
    * {@code StackTest}.
    */
   @Test
-  public void popTest() {
-    testNumStack.push(1.2f);
+  public void validPopTest() {
+    testOpStack.push(Symbol.TIMES);
     try {
-      Assertions.assertEquals(1.2f, testNumStack.pop());
+      Assertions.assertEquals(Symbol.TIMES, testOpStack.pop());
     } catch (EmptyStackException e) {
       // Catch statement here to safely deal with the exception however it is not expected to fail
       // as the stack has a float pushed onto it in the test therefore it is known that there is
@@ -80,17 +78,17 @@ public class NumStackTest {
   }
 
   /**
-   * Test 5 - Test written to check that, when a series of floats are pushed onto the stack, that
+   * Test 5 - Test written to check that, when a series of Symbols are pushed onto the stack, that
    * the correct entry is popped off when called in the method.
    */
   @Test
   public void correctPopOrderTest() {
-    testNumStack.push(1.0f);
-    testNumStack.push(1.1f);
-    testNumStack.push(1.2f);
-    testNumStack.push(1.3f);
+    testOpStack.push(Symbol.TIMES);
+    testOpStack.push(Symbol.DIVIDE);
+    testOpStack.push(Symbol.LEFT_BRACKET);
+    testOpStack.push(Symbol.RIGHT_BRACKET);
     try {
-      Assertions.assertEquals(1.3f, testNumStack.pop());
+      Assertions.assertEquals(Symbol.RIGHT_BRACKET, testOpStack.pop());
     } catch (EmptyStackException e) {
       // Catch statement here to safely deal with the exception however it is not expected to fail
       // as the stack has a float pushed onto it in the test therefore it is known that there is
@@ -107,21 +105,21 @@ public class NumStackTest {
    */
   @Test
   public void popAfterPopTest() {
-    testNumStack.push(1.0f);
-    testNumStack.push(1.1f);
-    testNumStack.push(1.2f);
+    testOpStack.push(Symbol.DIVIDE);
+    testOpStack.push(Symbol.LEFT_BRACKET);
+    testOpStack.push(Symbol.MINUS);
     try {
-      testNumStack.pop();
+      testOpStack.pop();
     } catch (EmptyStackException e) {
       // Catch statement here to safely deal with the exception however it is not expected to fail
       // as the stack has a float pushed onto it in the test therefore it is known that there is
       // something in the stack which can be popped off.
       Assertions.fail(e);
     }
-    testNumStack.push(1.3f);
-    testNumStack.push(1.4f);
+    testOpStack.push(Symbol.PLUS);
+    testOpStack.push(Symbol.RIGHT_BRACKET);
     try {
-      Assertions.assertEquals(1.4f, testNumStack.pop());
+      Assertions.assertEquals(Symbol.RIGHT_BRACKET, testOpStack.pop());
     } catch (EmptyStackException e) {
       // Catch statement here to safely deal with the exception however it is not expected to fail
       // as the stack has a float pushed onto it in the test therefore it is known that there is
@@ -129,5 +127,5 @@ public class NumStackTest {
       Assertions.fail(e);
     }
   }
-
+  
 }
