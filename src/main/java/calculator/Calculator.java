@@ -2,41 +2,16 @@ package calculator;
 
 
 /**
- * Model for a calculator. {@code Calculator} is a singleton as only one instance of the calculator
- * is needed during runtime. Methods to create Singleton are used with thanks to Dave Cohen and are
- * taken from the "MVC-separated" example of code on Moodle.
+ * Model for a calculator. {@code Calculator}. An {@code Interface} is used to group the methods of
+ * both the {@code StandardCalc} and {@code RevPolishCalc}. No test class is written for
+ * {@code Calculator} as there is no need for tests on an interface method and the interface methods
+ * can only be accessed via implementation so they will be tested in the classes which implement
+ * {@code Calculator}.
  *
- * @see <a href="https://moodle.royalholloway.ac.uk/course/view.php?id=1470&sectionid=141860">
- *      Moodle - MVC-Separated</a>
- *
- * @author David Kidd, Dave Cohen
+ * @author David Kidd
  */
-public final class Calculator {
+interface Calculator {
 
-  /**
-   * Private constructor for {@code Calculator} so that this class can only be instantiated from
-   * inside the class itself to limit creation to a single instance.
-   */
-  private Calculator() {}
-
-  /**
-   * The (exactly) one instance of this class. Created in a lazy manner when it is required.
-   */
-  private static Calculator instance = null;
-
-  /**
-   * The hook to access this Singleton Calculator. Instantiated in a lazy way - Only created when
-   * needed to save resources. If the Calculator hasn't been created then a new {@code Calculator}
-   * is created, otherwise the existing {@code Calculator} is returned.
-   *
-   * @return The instance of {@code Calculator}.
-   */
-  public static Calculator getInstance() {
-    if (instance == null) {
-      instance = new Calculator();
-    }
-    return instance;
-  }
 
 
   /**
@@ -46,8 +21,6 @@ public final class Calculator {
    * @return The output of the expression.
    * @throws InvalidExpression Thrown if the expression passed in is invalid.
    */
-  public float evaluate(String expression) throws InvalidExpression {
-    throw new InvalidExpression(null);
-  }
+  public float evaluate(String expression) throws InvalidExpression;
 
 }
