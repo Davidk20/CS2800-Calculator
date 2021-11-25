@@ -1,6 +1,5 @@
 package calculator;
 
-import java.util.Collections;
 import java.util.EmptyStackException;
 import java.util.LinkedList;
 import java.util.List;
