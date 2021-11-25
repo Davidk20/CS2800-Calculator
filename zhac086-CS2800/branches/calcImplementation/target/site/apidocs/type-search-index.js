@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"calculator","l":"Entry"},{"p":"calculator","l":"InvalidEntryTypeException"},{"p":"calculator","l":"Stack"},{"p":"calculator","l":"Symbol"},{"p":"calculator","l":"Type"}];updateSearchResults();

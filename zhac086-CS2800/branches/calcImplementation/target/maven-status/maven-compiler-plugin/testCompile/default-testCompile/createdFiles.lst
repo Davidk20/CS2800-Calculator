@@ -1,7 +1,8 @@
-calculator/EntryTest.class
-calculator/StackTest.class
-calculator/StrStackTest.class
-calculator/SymbolTest.class
-calculator/NumStackTest.class
-calculator/OpStackTest.class
-calculator/TypeTest.class
+calculator\EntryTest.class
+calculator\StrStackTest.class
+calculator\TypeTest.class
+calculator\NumStackTest.class
+calculator\CalculatorTest.class
+calculator\StackTest.class
+calculator\SymbolTest.class
+calculator\OpStackTest.class
