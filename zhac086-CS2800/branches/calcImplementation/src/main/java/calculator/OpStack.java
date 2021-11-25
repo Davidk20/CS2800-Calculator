@@ -57,6 +57,7 @@ public class OpStack {
     } catch (InvalidEntryTypeException e) {
       return Symbol.INVALID; 
       // This case never occurs as OpStack controls all inputs of the stack.
+      // This means that it will never be covered in test and therefore will not pass coverage.
     }
   }
 

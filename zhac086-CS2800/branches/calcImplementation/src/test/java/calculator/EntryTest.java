@@ -163,4 +163,53 @@ public class EntryTest {
     Assertions.assertFalse(symbolEntry.equals(stringEntry));
   }
 
+
+  /**
+   * Test 13 - Test written to check that when the {@code toString} method is called on a
+   * {@code Symbol} {@code Entry}, the correctly formatted string is returned.
+   */
+  @Test
+  public void toStringSymbolTest() {
+    Assertions.assertEquals("Symbol = (", symbolEntry.toString());
+  }
+
+  /**
+   * Test 14 - Test written to check that when the {@code toString} method is called on a
+   * {@code Number} {@code Entry}, the correctly formatted string is returned.
+   */
+  @Test
+  public void toStringNumberTest() {
+    Assertions.assertEquals("Number = 1.234", numberEntry.toString());
+  }
+
+  /**
+   * Test 15 - Test written to check that when the {@code toString} method is called on a
+   * {@code String} {@code Entry}, the correctly formatted string is returned.
+   */
+  @Test
+  public void toStringStringTest() {
+    Assertions.assertEquals("String = test string", stringEntry.toString());
+  }
+
+
+
+  /**
+   * Test 16 - Test written to check that when an {@code Entry} is compared with {@code null} that
+   * the returned value is {@code false}.
+   */
+  @Test
+  public void equalsNullObjectTest() {
+    Assertions.assertFalse(symbolEntry.equals(null));
+  }
+
+
+  /**
+   * Test 17 - Test written to check that when an {@code Entry} is compared with an object of a
+   * different type, the method returns {@code false}.
+   */
+  @Test
+  public void equalsDifferentClassTest() {
+    Assertions.assertFalse(symbolEntry.equals(Type.INVALID));
+  }
+
 }
