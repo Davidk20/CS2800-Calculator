@@ -7,14 +7,14 @@ package calculator;
  * @author David Kidd
  *
  */
-public class InvalidExpression extends Exception {
+public class InvalidExpressionException extends Exception {
   /**
    * This constructor is designed to be used when there is a single exception with no previous
    * errors in the Stack trace.
    *
    * @param message The error message passed when the exception is thrown.
    */
-  public InvalidExpression(String message) {
+  public InvalidExpressionException(String message) {
     super(message);
   }
 
@@ -26,7 +26,7 @@ public class InvalidExpression extends Exception {
    * @param message The error message passed when the exception is thrown.
    * @param cause The previous {@code Exception} which came before this exception in the stack.
    */
-  public InvalidExpression(String message, Throwable cause) {
+  public InvalidExpressionException(String message, Throwable cause) {
     super(message, cause);
   }
 

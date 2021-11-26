@@ -19,8 +19,9 @@ interface Calculator {
    *
    * @param expression The expression to be evaluated.
    * @return The output of the expression.
-   * @throws InvalidExpression Thrown if the expression passed in is invalid.
+   * @throws InvalidExpressionException Thrown if the expression passed in is invalid. Example
+   *         invalid strings include a null string or a string containing no numbers.
    */
-  public float evaluate(String expression) throws InvalidExpression;
+  public float evaluate(String expression) throws InvalidExpressionException;
 
 }
