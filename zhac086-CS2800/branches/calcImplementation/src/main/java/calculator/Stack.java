@@ -38,7 +38,7 @@ public final class Stack {
 
 
   /**
-   * Returns the {@code Entry} on the top of the stack without removing it from the stack.
+   * Returns the {@code Entry} on the top of the stack without removing it.
    *
    * @return The {@code Entry} on the top of the stack.
    * @throws EmptyStackException Thrown if the stack is empty.
