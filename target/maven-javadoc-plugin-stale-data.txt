@@ -1,0 +1,87 @@
+@options
+@packages
+-classpath
+'/Users/davidkidd/.m2/repository/org/jacoco/jacoco-maven-plugin/0.8.7/jacoco-maven-plugin-0.8.7.jar:/Users/davidkidd/.m2/repository/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar:/Users/davidkidd/.m2/repository/org/apache/maven/maven-model/3.0/maven-model-3.0.jar:/Users/davidkidd/.m2/repository/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.jar:/Users/davidkidd/.m2/repository/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar:/Users/davidkidd/.m2/repository/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar:/Users/davidkidd/.m2/repository/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar:/Users/davidkidd/.m2/repository/org/apache/maven/maven-core/3.0/maven-core-3.0.jar:/Users/davidkidd/.m2/repository/org/apache/maven/maven-settings/3.0/maven-settings-3.0.jar:/Users/davidkidd/.m2/repository/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.jar:/Users/davidkidd/.m2/repository/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar:/Users/davidkidd/.m2/repository/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar:/Users/davidkidd/.m2/repository/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar:/Users/davidkidd/.m2/repository/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar:/Users/davidkidd/.m2/repository/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar:/Users/davidkidd/.m2/repository/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar:/Users/davidkidd/.m2/repository/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar:/Users/davidkidd/.m2/repository/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar:/Users/davidkidd/.m2/repository/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar:/Users/davidkidd/.m2/repository/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar:/Users/davidkidd/.m2/repository/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar:/Users/davidkidd/.m2/repository/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar:/Users/davidkidd/.m2/repository/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.jar:/Users/davidkidd/.m2/repository/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.jar:/Users/davidkidd/.m2/repository/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.jar:/Users/davidkidd/.m2/repository/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.jar:/Users/davidkidd/.m2/repository/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar:/Users/davidkidd/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/Users/davidkidd/.m2/repository/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar:/Users/davidkidd/.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar:/Users/davidkidd/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar:/Users/davidkidd/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar:/Users/davidkidd/.m2/repository/org/jacoco/org.jacoco.core/0.8.7/org.jacoco.core-0.8.7.jar:/Users/davidkidd/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/Users/davidkidd/.m2/repository/org/ow2/asm/asm-commons/9.1/asm-commons-9.1.jar:/Users/davidkidd/.m2/repository/org/ow2/asm/asm-analysis/9.1/asm-analysis-9.1.jar:/Users/davidkidd/.m2/repository/org/ow2/asm/asm-tree/9.1/asm-tree-9.1.jar:/Users/davidkidd/.m2/repository/org/jacoco/org.jacoco.report/0.8.7/org.jacoco.report-0.8.7.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'8'
+-sourcepath
+'/Users/davidkidd/eclipse-workspace/calculator/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2021. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'CS2800 Calculator 0.0.1-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' '/Users/davidkidd/eclipse-workspace/calculator/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'CS2800 Calculator 0.0.1-SNAPSHOT API'
+calculator
+/Users/davidkidd/.m2/repository/org/jacoco/jacoco-maven-plugin/0.8.7/jacoco-maven-plugin-0.8.7.jar = 1637431182507
+/Users/davidkidd/.m2/repository/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar = 1634330907274
+/Users/davidkidd/.m2/repository/org/apache/maven/maven-model/3.0/maven-model-3.0.jar = 1634330907115
+/Users/davidkidd/.m2/repository/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.jar = 1634330907456
+/Users/davidkidd/.m2/repository/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar = 1634330904175
+/Users/davidkidd/.m2/repository/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar = 1634330904752
+/Users/davidkidd/.m2/repository/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar = 1634330906211
+/Users/davidkidd/.m2/repository/org/apache/maven/maven-core/3.0/maven-core-3.0.jar = 1634330903058
+/Users/davidkidd/.m2/repository/org/apache/maven/maven-settings/3.0/maven-settings-3.0.jar = 1634330907119
+/Users/davidkidd/.m2/repository/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.jar = 1634330903207
+/Users/davidkidd/.m2/repository/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar = 1634330903268
+/Users/davidkidd/.m2/repository/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar = 1634330903439
+/Users/davidkidd/.m2/repository/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar = 1636066766015
+/Users/davidkidd/.m2/repository/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar = 1636066765958
+/Users/davidkidd/.m2/repository/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar = 1636066766019
+/Users/davidkidd/.m2/repository/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar = 1636066766053
+/Users/davidkidd/.m2/repository/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar = 1634330904363
+/Users/davidkidd/.m2/repository/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar = 1634330904506
+/Users/davidkidd/.m2/repository/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar = 1634322027864
+/Users/davidkidd/.m2/repository/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar = 1634330906578
+/Users/davidkidd/.m2/repository/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar = 1634330906582
+/Users/davidkidd/.m2/repository/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar = 1637429582964
+/Users/davidkidd/.m2/repository/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.jar = 1637429582920
+/Users/davidkidd/.m2/repository/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.jar = 1637429582958
+/Users/davidkidd/.m2/repository/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.jar = 1637431183335
+/Users/davidkidd/.m2/repository/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.jar = 1637429582990
+/Users/davidkidd/.m2/repository/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar = 1637431183483
+/Users/davidkidd/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar = 1634322030806
+/Users/davidkidd/.m2/repository/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar = 1636066773490
+/Users/davidkidd/.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar = 1634330907454
+/Users/davidkidd/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar = 1637431183414
+/Users/davidkidd/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar = 1637431183496
+/Users/davidkidd/.m2/repository/org/jacoco/org.jacoco.core/0.8.7/org.jacoco.core-0.8.7.jar = 1637431183554
+/Users/davidkidd/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar = 1637431183529
+/Users/davidkidd/.m2/repository/org/ow2/asm/asm-commons/9.1/asm-commons-9.1.jar = 1637431183579
+/Users/davidkidd/.m2/repository/org/ow2/asm/asm-analysis/9.1/asm-analysis-9.1.jar = 1637431183582
+/Users/davidkidd/.m2/repository/org/ow2/asm/asm-tree/9.1/asm-tree-9.1.jar = 1637431183631
+/Users/davidkidd/.m2/repository/org/jacoco/org.jacoco.report/0.8.7/org.jacoco.report-0.8.7.jar = 1637431183630
+/Users/davidkidd/eclipse-workspace/calculator/src/main/java = 1637947056177
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/constant-values.html = 1638553796604
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/tag-search-index.js = 1638553796679
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/overview-tree.html = 1638553796648
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/module-search-index.js = 1638553796678
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/index.html = 1638553796688
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/package-search-index.js = 1638553796678
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/jquery-ui.overrides.css = 1638553796701
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/serialized-form.html = 1638553796611
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/index-all.html = 1638553796680
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/allpackages-index.html = 1638553796686
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/deprecated-list.html = 1638553796651
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/member-search-index.js = 1638553796679
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/script.js = 1638553796692
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/stylesheet.css = 1638553796692
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/help-doc.html = 1638553796691
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/element-list = 1638553796589
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/allclasses-index.html = 1638553796685
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/type-search-index.js = 1638553796678
+/Users/davidkidd/eclipse-workspace/calculator/target/site/apidocs/search.js = 1638553796693

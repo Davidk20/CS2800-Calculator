@@ -33,6 +33,14 @@ public class StandardCalcTest {
   @Test
   public void evaluateThrowsWhenNullTest() {
     Assertions.assertThrows(InvalidExpressionException.class, () -> calculator.evaluate(null));
+  }
+  
+  /**
+   * Test 2b - Test written to check that {@code evaluate()} correctly throws a
+   * {@code InvalidExpressionException} when the expression is a null string.
+   */
+  @Test
+  public void evaluateThrowsWhenNullStringTest() {
     Assertions.assertThrows(InvalidExpressionException.class, () -> calculator.evaluate(""));
   }
 
@@ -63,6 +71,14 @@ public class StandardCalcTest {
   public void infixToPostfixNullThrowsTest() {
     Assertions.assertThrows(InvalidExpressionException.class,
         () -> calculator.infixToPostfix(null));
+  }
+  
+  /**
+   * Test 5b - Test written to check that {@code infixToPostfix()} correctly throws a
+   * {@code InvalidExpressionException} when the expression is a null string.
+   */
+  @Test
+  public void infixToPostfixNullStringThrowsTest() {
     Assertions.assertThrows(InvalidExpressionException.class, () -> calculator.infixToPostfix(""));
   }
 
@@ -72,8 +88,6 @@ public class StandardCalcTest {
    */
   @Test
   public void infixToPostfixDivisionByZeroThrowsTest() {
-    Assertions.assertThrows(InvalidExpressionException.class,
-        () -> calculator.infixToPostfix("1 / 0"));
     Assertions.assertThrows(InvalidExpressionException.class,
         () -> calculator.infixToPostfix("( 1 / 0 ) + 3"));
   }
@@ -141,7 +155,6 @@ public class StandardCalcTest {
             "( ( 83.5 + ( -13.3 * -11.1 ) ) - ( ( 103.9 - 121.6 ) / 136.7 ) ) + "
             + "( ( ( 65.1 + 58.0 ) * 2.0 ) / ( ( 10.1 + 49.0 ) / 64.3 ) )"));
   }
-
 
   /**
    * Test 11 - Test written to check that if an expression which is already converted to postfix
