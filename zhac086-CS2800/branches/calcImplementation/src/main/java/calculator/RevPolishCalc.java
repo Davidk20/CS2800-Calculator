@@ -22,11 +22,17 @@ public class RevPolishCalc implements Calculator {
 
   @Override
   public float evaluate(String expression) throws InvalidExpressionException {
-    float result = 63.0f;
-    if (expression == null) {
-      throw new InvalidExpressionException("INVALID EXPRESSION");
+    // checks to see if there are any reasons for the expression to be invalid
+    if (expression == null || expression.length() == 0) {
+      throw new InvalidExpressionException("Invalid Expression - String is empty or null.");
+    } else if (expression.contains("/ 0")) {
+      throw new InvalidExpressionException("Invalid Expression - Attempted division by 0.");
     }
-    return result;
+    String[] expressionSplit = expression.split(" ");
+    if (expressionSplit.length < 3) {
+      throw new InvalidExpressionException("Invalid Expression - Expression too short.");
+    }
+    return 63.0f;
   }
 
 
