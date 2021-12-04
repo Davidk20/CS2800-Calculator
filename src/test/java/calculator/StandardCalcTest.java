@@ -59,8 +59,9 @@ public class StandardCalcTest {
    */
   @Test
   public void evaluateFinalResultTest() throws InvalidExpressionException {
-    float result = calculator.evaluate("( 5 * ( 6 + 7 ) ) - 2");
-    Assertions.assertEquals(63.0f, result);
+    Assertions.assertEquals(63.0f, calculator.evaluate("( 5 * ( 6 + 7 ) ) - 2"));
+    Assertions.assertEquals(105.0f, calculator.evaluate("5 * ( ( 6 + 7 ) + 8 )"));
+    Assertions.assertEquals(-12.0f, calculator.evaluate("3 * ( 4 + -8 )"));
   }
 
   /**
