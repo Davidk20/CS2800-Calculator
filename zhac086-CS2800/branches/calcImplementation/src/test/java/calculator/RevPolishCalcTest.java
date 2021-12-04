@@ -58,9 +58,8 @@ public class RevPolishCalcTest {
    * being that the expression is too short to be complete.
    */
   @Test
-  public void infixToPostfixTooShortTest() {
-    Assertions.assertThrows(InvalidExpressionException.class,
-        () -> calculator.evaluate("3 +"));
+  public void expressionTooShortTest() {
+    Assertions.assertThrows(InvalidExpressionException.class, () -> calculator.evaluate("3 +"));
   }
 
   /**
@@ -69,8 +68,52 @@ public class RevPolishCalcTest {
    */
   @Test
   public void evaluateFinalResultTest() throws InvalidExpressionException {
-    float result = calculator.evaluate("5 6 7 + * 2");
-    Assertions.assertEquals(63.0f, result);
+    Assertions.assertEquals(63.0f, calculator.evaluate("5 6 7 + * 2 -"));
+    Assertions.assertEquals(105.0f, calculator.evaluate("5.0 6.0 7.0 + 8.0 + *"));
+    Assertions.assertEquals(-12.0f, calculator.evaluate("3.0 4.0 -8.0 + *"));
   }
+
+  /**
+   * Test 6 - Test written to check that an {@code InvalidExpressionException} is thrown when an
+   * infix expression is passed into the postfix calculator.
+   */
+  @Test
+  public void invalidInfixExpressionTest() {
+    Assertions.assertThrows(InvalidExpressionException.class,
+        () -> calculator.evaluate("( 3 + 4 )"));
+  }
+
+  /**
+   * Test 7 - Test written to check that {@code InvalidExpressionException} is thrown when an
+   * invalid operator is used in the evaluation.
+   */
+  @Test
+  public void evaluateSubExpressionThrowsInvalidTest() {
+    Assertions.assertThrows(InvalidExpressionException.class,
+        () -> calculator.evaluateSubExpression(1.0f, Symbol.RIGHT_BRACKET, 1.0f));
+  }
+
+  /**
+   * Test 8 - Test written to check that {@code InvalidExpressionException} is thrown when division
+   * by zero is attempted in the evaluation.
+   */
+  @Test
+  public void evaluateSubExpressionThrowsDivByZeroTest() {
+    Assertions.assertThrows(InvalidExpressionException.class,
+        () -> calculator.evaluateSubExpression(1.0f, Symbol.DIVIDE, 0.0f));
+  }
+
+  /**
+   * Test 9 - Test written to check that the method correctly evaluates the small expressions and
+   * returns the correct result.
+   */
+  @Test
+  public void evaluateSubExpressionTest() throws InvalidExpressionException {
+    Assertions.assertEquals(4.0f, calculator.evaluateSubExpression(2.0f, Symbol.PLUS, 2.0f));
+    Assertions.assertEquals(25.0f, calculator.evaluateSubExpression(5.0f, Symbol.TIMES, 5.0f));
+    Assertions.assertEquals(7.0f, calculator.evaluateSubExpression(10.0f, Symbol.MINUS, 3.0f));
+    Assertions.assertEquals(10.0f, calculator.evaluateSubExpression(100.0f, Symbol.DIVIDE, 10.0f));
+  }
+
 
 }
