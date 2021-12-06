@@ -57,6 +57,7 @@ public class NumStack {
     } catch (InvalidEntryTypeException e) {
       return Float.POSITIVE_INFINITY; 
       // This case never occurs as NumStack controls all inputs of the stack.
+      // This means that it will never be covered in test and therefore will not pass coverage.
     }
   }
 

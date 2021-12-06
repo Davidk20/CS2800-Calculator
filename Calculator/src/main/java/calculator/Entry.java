@@ -36,7 +36,7 @@ public class Entry {
     this.number = value;
     this.type = Type.NUMBER;
   }
-  
+
   /**
    * Initialises the {@code Entry} with a String.
    *
@@ -58,16 +58,6 @@ public class Entry {
   }
 
   /**
-   * Sets the {@code Type} of entry.
-   *
-   * @param type The {@code Type} to be set.
-   */
-  public void setType(Type type) {
-    this.type = type;
-  }
-
-
-  /**
    * Returns the {@code Number} of the entry. If the {@code Type} of the entry is not {@code NUMBER}
    * then an exception is thrown.
    *
@@ -80,15 +70,6 @@ public class Entry {
     } else {
       throw new InvalidEntryTypeException("This entry is not of type NUMBER.");
     }
-  }
-
-  /**
-   * Sets the number.
-   *
-   * @param number The number to be set.
-   */
-  public void setNumber(float number) {
-    this.number = number;
   }
 
   /**
@@ -107,16 +88,6 @@ public class Entry {
   }
 
   /**
-   * Sets the symbol of the entry.
-   *
-   * @param symbol The symbol to be set.
-   */
-  public void setSymbol(Symbol symbol) {
-    this.symbol = symbol;
-  }
-
-
-  /**
    * Returns the {@code Str} of the entry. If the {@code Type} of the entry is not {@code STRING}
    * then an exception is thrown.
    *
@@ -131,20 +102,20 @@ public class Entry {
     }
   }
 
-  /**
-   * Sets the string value of the entry.
-   *
-   * @param str The string to be set as str.
-   */
-  public void setStr(String str) {
-    this.str = str;
-  }
-
-
   @Override
   public String toString() {
-    return "Entry [number=" + number + ", other=" + symbol + ", str=" + str + ", type=" + type
-        + "]";
+    switch (this.type) {
+      case SYMBOL:
+        return "Symbol = " + this.symbol.toString();
+      case NUMBER:
+        return "Number = " + this.number;
+      case STRING:
+        return "String = " + this.str;
+      default:
+        // The default case is to return invalid as if it is not one of the types above then by
+        // elimination it must be invalid.
+        return "INVALID ENTRY";
+    }
   }
 
   @Override
