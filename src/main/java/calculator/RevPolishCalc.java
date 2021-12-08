@@ -1,6 +1,5 @@
 package calculator;
 
-import java.util.EmptyStackException;
 
 /**
  * Class implements {@code Calculator} to evaluate Reverse Polish string expressions.
