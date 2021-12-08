@@ -47,11 +47,13 @@ public class GuiView extends Application implements ViewInterface {
    */
   @FXML
   private ToggleGroup expressionType;
+  
+  Controller controller;
 
   public static void main(String[] args) {
     Application.launch(args);
   }
-
+  
   @Override
   public void start(Stage stage) throws Exception {
     Pane page = (Pane) FXMLLoader.load(getClass().getResource("/mainScreen.fxml"));
@@ -68,16 +70,24 @@ public class GuiView extends Application implements ViewInterface {
   }
 
   @Override
+  public boolean getExpressionType() {
+    return isInfix.isSelected();
+  }
+  
+  @Override
   public void setAnswer(String answer) {
     outputField.setText(answer);
   }
 
   @Override
-  public void addCalcObserver(boolean isInfix) {
-    // TODO Auto-generated method stub
-    
+  public void addCalcObserver(Controller controller) {
+    this.controller = controller;
   }
 
+  public void addEvaluateObserver(Controller con) {
+    evaluateButton.setOnAction(event -> con.handleCalculate());
+  }
+  
 
 
 }

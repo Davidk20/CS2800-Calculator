@@ -1,7 +1,5 @@
 package calculator;
 
-import java.util.function.Consumer;
-
 /**
  * Interface to create a relationship between the two different View classes (GuiView and
  * AsciiView).
@@ -19,12 +17,20 @@ public interface ViewInterface {
   public String getExpression();
   
   /**
+   * Collects whether the expression is infix or postfix.
+   *
+   * @return {@code true} if the expression is infix.
+   */
+  public boolean getExpressionType();
+  
+  /**
    * Returns the answer to the user as a {@code String}.
    *
    * @param answer The result of the expression being evaluated.
    */
   public void setAnswer(String answer);
   
-  public void addCalcObserver(boolean isInfix);
+  
+  public void addCalcObserver(Controller controller);
   
 }
