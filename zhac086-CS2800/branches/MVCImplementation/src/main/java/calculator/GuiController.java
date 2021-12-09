@@ -44,9 +44,9 @@ public class GuiController implements ViewInterface {
    */
   @FXML
   private ToggleGroup expressionType;
-  
-  CalculatorController observer;
-  
+
+  CalculatorController observer = CalculatorController.getInstance();
+
   @Override
   public String getExpression() {
     return inputField.getText();
@@ -56,19 +56,21 @@ public class GuiController implements ViewInterface {
   public boolean getExpressionType() {
     return isInfix.isSelected();
   }
-  
+
   @Override
   public void setAnswer(String answer) {
     outputField.setText(answer);
   }
 
-  @Override
-  public void addCalcObserver(CalculatorController controller) {
-    this.observer = controller;
-  }
-  
+
+  /**
+   * The {@code OnAction} method from the GUI, the method is notified when the user wants to
+   * calculate and handles sending the calculation to the controller.
+   *
+   * @param event The{@code OnAction} event from JavaFX.
+   */
   public void handleCalculate(ActionEvent event) {
     this.observer.handleCalculate();
   }
-  
+
 }

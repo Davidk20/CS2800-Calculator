@@ -31,7 +31,4 @@ public interface ViewInterface {
   public void setAnswer(String answer);
 
   
-  void addCalcObserver(CalculatorController controller);
-
-  
 }

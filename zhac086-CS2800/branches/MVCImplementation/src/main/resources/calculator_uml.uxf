@@ -2,16 +2,16 @@
 <diagram program="umlet" version="14.3.0">
   <help_text>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=0..*</help_text>
-  <zoom_level>9</zoom_level>
+  <zoom_level>13</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>684</x>
-      <y>927</y>
-      <w>261</w>
-      <h>234</h>
+      <x>975</x>
+      <y>1339</y>
+      <w>377</w>
+      <h>338</h>
     </coordinates>
-    <panel_attributes>_cs2800::Stack_
+    <panel_attributes>_calculator::Stack_
 bg=pink
 This class represents a 
 Stack of Entry values
@@ -36,14 +36,14 @@ Stack of Entry values
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>693</x>
-      <y>684</y>
-      <w>243</w>
-      <h>126</h>
+      <x>1053</x>
+      <y>1040</y>
+      <w>403</w>
+      <h>195</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt; 
 bg=yellow
-_cs2800::Calculator_
+_calculator::Calculator_
 Allows calculation of 
 String Expressions
 --
@@ -56,14 +56,14 @@ String Expressions
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>999</x>
-      <y>1323</y>
-      <w>189</w>
-      <h>135</h>
+      <x>1430</x>
+      <y>1911</y>
+      <w>273</w>
+      <h>195</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt; 
 bg=orange
-_cs2800::Type_
+_calculator::Type_
 A list of the types of 
 value an Entry can represent
 --
@@ -77,12 +77,12 @@ _INVALID_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>684</x>
-      <y>1215</y>
-      <w>261</w>
-      <h>360</h>
+      <x>975</x>
+      <y>1755</y>
+      <w>377</w>
+      <h>520</h>
     </coordinates>
-    <panel_attributes>_cs2800::Entry_
+    <panel_attributes>_calculator::Entry_
 bg=orange
 Values stored in a Stack
 --
@@ -115,14 +115,14 @@ Values stored in a Stack
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>423</x>
-      <y>1206</y>
-      <w>216</w>
-      <h>180</h>
+      <x>598</x>
+      <y>1742</y>
+      <w>312</w>
+      <h>260</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt; 
 bg=orange
-_cs2800::Symbol_
+_calculator::Symbol_
 A list of the non-number tokens 
 possible in an expression
 --
@@ -140,10 +140,10 @@ _INVALID_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>684</x>
-      <y>27</y>
-      <w>288</w>
-      <h>153</h>
+      <x>975</x>
+      <y>39</y>
+      <w>416</w>
+      <h>221</h>
     </coordinates>
     <panel_attributes>&lt;&lt;model&gt;&gt;
 bg=red
@@ -163,13 +163,13 @@ the Calculator's memories.
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>423</x>
-      <y>684</y>
-      <w>243</w>
-      <h>252</h>
+      <x>598</x>
+      <y>949</y>
+      <w>416</w>
+      <h>364</h>
     </coordinates>
     <panel_attributes>bg=pink
-_cs2800::NumStack_
+_calculator::NumStack_
 Since reverse Polish evaluation
 only uses a Stack of numeric values
 we provide a facade to hide details
@@ -194,13 +194,13 @@ we provide a facade to hide details
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>963</x>
-      <y>684</y>
-      <w>261</w>
-      <h>252</h>
+      <x>1560</x>
+      <y>988</y>
+      <w>403</w>
+      <h>364</h>
     </coordinates>
     <panel_attributes>bg=pink
-_cs2800::OpStack_
+_calculator::OpStack_
 Since the Shunting algorithm
 only uses a Stack of symbols 
 we provide a facade to hide details
@@ -225,13 +225,13 @@ we provide a facade to hide details
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>945</x>
-      <y>351</y>
-      <w>315</w>
-      <h>234</h>
+      <x>1352</x>
+      <y>507</y>
+      <w>455</w>
+      <h>338</h>
     </coordinates>
     <panel_attributes>bg=yellow
-_cs2800::StandardCalc_
+_calculator::StandardCalc_
 Evaluates infix String Expressions
 --
 *Attributes*
@@ -252,13 +252,13 @@ Evaluates infix String Expressions
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>513</x>
-      <y>396</y>
-      <w>234</w>
-      <h>153</h>
+      <x>676</x>
+      <y>559</y>
+      <w>546</w>
+      <h>286</h>
     </coordinates>
     <panel_attributes>bg=yellow
-_cs2800::RevPolishCalc_
+_calculator::RevPolishCalc_
 Evaluates Reverse Polish
 String Expressions
 --
@@ -266,6 +266,9 @@ String Expressions
 -values: NumStack
 --
 *Responsibilities*
++evaluateSubExpression(float: f1, Symbol operator, float f2): float
+     {exception=InvalidExpression}
+/    Evaluates a simple, two number expression returning the result. /
 +evaluate(String: expression): float
      {exception=InvalidExpression}
 /    Evaluates and calculates a string expression/</panel_attributes>
@@ -274,21 +277,21 @@ String Expressions
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>612</x>
-      <y>171</y>
-      <w>198</w>
-      <h>243</h>
+      <x>819</x>
+      <y>247</y>
+      <w>338</w>
+      <h>338</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>200.0;10.0;10.0;250.0</additional_attributes>
+    <additional_attributes>240.0;10.0;10.0;240.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>828</x>
-      <y>171</y>
-      <w>216</w>
-      <h>198</h>
+      <x>1183</x>
+      <y>247</y>
+      <w>312</w>
+      <h>286</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;220.0;200.0</additional_attributes>
@@ -296,68 +299,68 @@ String Expressions
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1044</x>
-      <y>576</y>
-      <w>54</w>
-      <h>126</h>
+      <x>1495</x>
+      <y>832</y>
+      <w>260</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;40.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;180.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>927</y>
-      <w>162</w>
-      <h>126</h>
+      <x>1339</x>
+      <y>1339</y>
+      <w>416</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 &lt;&lt;facade&gt;&gt;</panel_attributes>
-    <additional_attributes>160.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>300.0;10.0;10.0;120.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>927</y>
-      <w>189</w>
-      <h>126</h>
+      <x>728</x>
+      <y>1300</y>
+      <w>273</w>
+      <h>221</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1pos=-50,20
 m1=&lt;&lt;facade&gt;&gt;</panel_attributes>
-    <additional_attributes>40.0;10.0;190.0;120.0</additional_attributes>
+    <additional_attributes>40.0;10.0;190.0;150.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>837</x>
-      <y>576</y>
-      <w>171</w>
-      <h>126</h>
+      <x>1261</x>
+      <y>832</y>
+      <w>182</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;120.0;170.0;10.0</additional_attributes>
+    <additional_attributes>10.0;160.0;120.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
-      <y>540</y>
-      <w>108</w>
-      <h>162</h>
+      <x>923</x>
+      <y>832</y>
+      <w>273</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>100.0;160.0;10.0;10.0</additional_attributes>
+    <additional_attributes>190.0;160.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>801</x>
-      <y>1152</y>
-      <w>27</w>
-      <h>81</h>
+      <x>1144</x>
+      <y>1664</y>
+      <w>39</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -365,10 +368,10 @@ m1=&lt;&lt;facade&gt;&gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>1278</y>
-      <w>153</w>
-      <h>63</h>
+      <x>1339</x>
+      <y>1846</y>
+      <w>221</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;150.0;50.0</additional_attributes>
@@ -376,10 +379,10 @@ m1=&lt;&lt;facade&gt;&gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>1305</y>
-      <w>72</w>
-      <h>45</h>
+      <x>897</x>
+      <y>1885</y>
+      <w>104</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>60.0;30.0;10.0;10.0</additional_attributes>
@@ -387,10 +390,10 @@ m1=&lt;&lt;facade&gt;&gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>612</y>
-      <w>207</w>
-      <h>153</h>
+      <x>247</x>
+      <y>884</y>
+      <w>299</w>
+      <h>221</h>
     </coordinates>
     <panel_attributes>&lt;&lt;view&gt;&gt;
 cs2800::GuiView
@@ -408,10 +411,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>54</y>
-      <w>378</w>
-      <h>117</h>
+      <x>455</x>
+      <y>78</y>
+      <w>546</w>
+      <h>169</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>400.0;110.0;10.0;10.0</additional_attributes>
@@ -419,10 +422,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>234</x>
-      <y>288</y>
-      <w>90</w>
-      <h>198</h>
+      <x>325</x>
+      <y>416</y>
+      <w>130</w>
+      <h>286</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>80.0;200.0;10.0;10.0</additional_attributes>
@@ -430,10 +433,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>9</x>
-      <y>288</y>
-      <w>126</w>
-      <h>342</h>
+      <x>0</x>
+      <y>416</y>
+      <w>182</w>
+      <h>494</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 m2=&lt;&lt;Observer&gt;&gt;</panel_attributes>
@@ -442,10 +445,10 @@ m2=&lt;&lt;Observer&gt;&gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>54</x>
-      <y>18</y>
-      <w>279</w>
-      <h>279</h>
+      <x>65</x>
+      <y>26</y>
+      <w>403</w>
+      <h>403</h>
     </coordinates>
     <panel_attributes>&lt;&lt;controller&gt;&gt;
 bg=blue
@@ -474,24 +477,24 @@ group=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>540</y>
-      <w>99</w>
-      <h>162</h>
+      <x>728</x>
+      <y>832</y>
+      <w>91</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;160.0</additional_attributes>
+    <additional_attributes>50.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1251</x>
-      <y>639</y>
-      <w>243</w>
-      <h>297</h>
+      <x>2067</x>
+      <y>923</y>
+      <w>416</w>
+      <h>429</h>
     </coordinates>
     <panel_attributes>bg=pink
-_cs2800::StrStack_
+_calculator::StrStack_
 The Shunting algorithm
 requires reversing an expression in 
 order to evaluate left to right - so 
@@ -519,34 +522,34 @@ we provide a facade to hide details
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>927</y>
-      <w>450</w>
-      <h>189</h>
+      <x>1339</x>
+      <y>1339</y>
+      <w>923</w>
+      <h>273</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=&lt;&lt;facade&gt;&gt;
 m1pos=-20,40</panel_attributes>
-    <additional_attributes>480.0;10.0;10.0;190.0</additional_attributes>
+    <additional_attributes>690.0;10.0;10.0;190.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1251</x>
-      <y>450</y>
-      <w>126</w>
-      <h>207</h>
+      <x>1794</x>
+      <y>650</y>
+      <w>455</w>
+      <h>299</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;210.0</additional_attributes>
+    <additional_attributes>10.0;10.0;330.0;210.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>36</x>
+      <x>39</x>
       <y>0</y>
-      <w>315</w>
-      <h>360</h>
+      <w>455</w>
+      <h>520</h>
     </coordinates>
     <panel_attributes>valign=bottom
 Controller
@@ -560,10 +563,10 @@ group=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>9</x>
-      <y>450</y>
-      <w>396</w>
-      <h>360</h>
+      <x>0</x>
+      <y>650</y>
+      <w>572</w>
+      <h>520</h>
     </coordinates>
     <panel_attributes>valign=bottom
 View Assembly
@@ -576,10 +579,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>45</x>
-      <y>468</y>
-      <w>279</w>
-      <h>126</h>
+      <x>52</x>
+      <y>676</y>
+      <w>403</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Interface&gt;&gt;
 cs2800::ViewInterface
@@ -596,10 +599,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>9</x>
-      <y>612</y>
-      <w>135</w>
-      <h>135</h>
+      <x>0</x>
+      <y>884</y>
+      <w>195</w>
+      <h>195</h>
     </coordinates>
     <panel_attributes>&lt;&lt;view&gt;&gt;
 cs2800::AsciiView
@@ -617,10 +620,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>252</x>
-      <y>288</y>
-      <w>153</w>
-      <h>342</h>
+      <x>351</x>
+      <y>416</y>
+      <w>221</w>
+      <h>494</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 m2=&lt;&lt;Observer&gt;&gt;</panel_attributes>
@@ -629,10 +632,10 @@ m2=&lt;&lt;Observer&gt;&gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
-      <y>585</y>
-      <w>63</w>
-      <h>45</h>
+      <x>117</x>
+      <y>845</y>
+      <w>91</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>50.0;10.0;10.0;30.0</additional_attributes>
@@ -640,10 +643,10 @@ m2=&lt;&lt;Observer&gt;&gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>243</x>
-      <y>585</y>
-      <w>72</w>
-      <h>45</h>
+      <x>338</x>
+      <y>845</y>
+      <w>104</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;60.0;30.0</additional_attributes>
@@ -651,10 +654,10 @@ m2=&lt;&lt;Observer&gt;&gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>414</x>
+      <x>585</x>
       <y>0</y>
-      <w>1188</w>
-      <h>1584</h>
+      <w>2028</w>
+      <h>2288</h>
     </coordinates>
     <panel_attributes>                                                              
                                                               
