@@ -5,28 +5,43 @@ package calculator;
  *
  * @author David Kidd
  */
-public class Controller {
+public class CalculatorController {
   /**
    * The model for the calculator allowing the controller to access both types of calculation.
    */
-  CalculatorModel model;
+  CalculatorModel model = new CalculatorModel();
   /**
    * The view for the controller to observe.
    */
   ViewInterface view;
 
+
+  // Singleton implementation - inspiration taken from MVCJavaFX example on moodle.
+  
+  private static CalculatorController instance = null;
+  
   /**
-   * Constructor for {@code Controller}.
+   * Returns the singular instance of GuiView or creates one if it has not been created yet.
    *
-   * @param view The view for the controller to observe. Either {@code GuiView} or
-   *        {@code AsciiView}.
+   * @return The instance of GuiView.
    */
-  public Controller(ViewInterface view) {
-    this.model = new CalculatorModel();
+  public static CalculatorController getInstance() {
+    if (instance == null) {
+      instance = new CalculatorController();
+    }
+    return instance;
+  }
+
+  /**
+   * Sets the view for the controller.
+   *
+   * @param view The view to be set.
+   */
+  public void setView(ViewInterface view) {
     this.view = view;
     this.view.addCalcObserver(this);
   }
-
+  
   /**
    * Handles the calculation of the expression returning the result to the GUI. If an error occurs
    * during evaluation, the error message is instead returned to the GUI.
@@ -36,7 +51,7 @@ public class Controller {
       Float result = this.model.evaluate(this.view.getExpression(), this.view.getExpressionType());
       this.view.setAnswer(result.toString());
     } catch (InvalidExpressionException e) {
-      this.view.setAnswer(e.getMessage());
+      this.view.setAnswer(e.getMessage().substring(21));
     }
   }
 }

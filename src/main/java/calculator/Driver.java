@@ -7,7 +7,7 @@ package calculator;
  * @author David Kidd
  */
 public class Driver {
-
+  
   /**
    * Runs the Calculator.
    *
@@ -16,10 +16,12 @@ public class Driver {
   public static void main(String[] args) {
     if (System.console() == null) {
       // Run GUI view in here
+      System.out.println("running in GUI mode.");
+      GuiView.getInstance();
     } else {
       // Run ASCII view here
+      System.out.println("running in ASCII mode.");
+      // change to ASCII view when created
     }
-
   }
-
 }
