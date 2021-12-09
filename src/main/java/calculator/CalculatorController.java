@@ -39,7 +39,6 @@ public class CalculatorController {
    */
   public void setView(ViewInterface view) {
     this.view = view;
-    this.view.addCalcObserver(this);
   }
   
   /**

@@ -7,13 +7,16 @@ package calculator;
  * @author David Kidd
  */
 public class Driver {
-  
+
   /**
-   * Runs the Calculator.
+   * Runs the Calculator. If run from the .jar file then is run as a GUI however if run from the
+   * command line then it is run in ASCII mode.
    *
    * @param args Arguments passed in when calling the program.
    */
   public static void main(String[] args) {
+    // Initialises the singleton for the Calculator Controller.
+    CalculatorController.getInstance();
     if (System.console() == null) {
       // Run GUI view in here
       System.out.println("running in GUI mode.");
@@ -21,7 +24,7 @@ public class Driver {
     } else {
       // Run ASCII view here
       System.out.println("running in ASCII mode.");
-      // change to ASCII view when created
+      AsciiView.getInstance().runView();
     }
   }
 }

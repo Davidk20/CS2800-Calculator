@@ -4,10 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -17,40 +13,6 @@ import javafx.stage.Stage;
  * @author David Kidd
  */
 public class GuiView extends Application {
-  /**
-   * The text field for the user to enter their expression.
-   */
-  @FXML
-  private TextField inputField;
-  /**
-   * The text field for the user to see the result of their expression.
-   */
-  @FXML
-  private TextField outputField;
-  /**
-   * The button to trigger evaluation.
-   */
-  @FXML
-  private Button evaluateButton;
-  /**
-   * One of the two buttons used to select expression type (infix).
-   */
-  @FXML
-  private RadioButton isInfix;
-  /**
-   * One of the two buttons used to select expression type (postfix).
-   */
-  @FXML
-  private RadioButton isPostfix;
-  /**
-   * The group containing the two radio buttons used to facilitate toggling between states.
-   */
-  @FXML
-  private ToggleGroup expressionType;
-  /**
-   * Controller observes changes in the state of the GUI and handles operations triggered by events.
-   */
-  
   FXMLLoader loader;
   
   
