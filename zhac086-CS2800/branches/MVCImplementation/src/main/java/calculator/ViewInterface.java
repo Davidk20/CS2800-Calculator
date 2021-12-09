@@ -29,8 +29,9 @@ public interface ViewInterface {
    * @param answer The result of the expression being evaluated.
    */
   public void setAnswer(String answer);
+
   
-  
-  public void addCalcObserver(Controller controller);
+  void addCalcObserver(CalculatorController controller);
+
   
 }

@@ -16,7 +16,7 @@ import javafx.stage.Stage;
  *
  * @author David Kidd
  */
-public class GuiView extends Application implements ViewInterface {
+public class GuiView extends Application {
   /**
    * The text field for the user to enter their expression.
    */
@@ -47,47 +47,46 @@ public class GuiView extends Application implements ViewInterface {
    */
   @FXML
   private ToggleGroup expressionType;
+  /**
+   * Controller observes changes in the state of the GUI and handles operations triggered by events.
+   */
   
-  Controller controller;
-
-  public static void main(String[] args) {
-    Application.launch(args);
+  FXMLLoader loader;
+  
+  
+  // Singleton implementation
+  
+  private static GuiView instance = null;
+  
+  @FXML
+  private void initialize() {
+    instance = this;
   }
   
+  /**
+   * Returns the singular instance of GuiView or creates one if it has not been created yet.
+   *
+   * @return The instance of GuiView.
+   */
+  public static GuiView getInstance() {
+    if (instance == null) {
+      GuiView.launch();
+      // Wait until the instance is ready since initialize has executed.
+      while (instance == null) {// empty body
+      }
+    }
+    return instance;
+  }
+    
   @Override
   public void start(Stage stage) throws Exception {
-    Pane page = (Pane) FXMLLoader.load(getClass().getResource("/mainScreen.fxml"));
+    loader = new FXMLLoader(getClass().getResource("/mainScreen.fxml"));
+    Pane page = (Pane) loader.load();
+    CalculatorController.getInstance().setView(loader.getController());
     Scene scene = new Scene(page);
     stage.setScene(scene);
     stage.setTitle("Calculator");
     stage.setResizable(false);
     stage.show();
   }
-
-  @Override
-  public String getExpression() {
-    return inputField.getText();
-  }
-
-  @Override
-  public boolean getExpressionType() {
-    return isInfix.isSelected();
-  }
-  
-  @Override
-  public void setAnswer(String answer) {
-    outputField.setText(answer);
-  }
-
-  @Override
-  public void addCalcObserver(Controller controller) {
-    this.controller = controller;
-  }
-
-  public void addEvaluateObserver(Controller con) {
-    evaluateButton.setOnAction(event -> con.handleCalculate());
-  }
-  
-
-
 }
