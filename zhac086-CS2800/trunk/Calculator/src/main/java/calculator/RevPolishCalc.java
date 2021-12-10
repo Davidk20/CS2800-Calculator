@@ -1,11 +1,14 @@
 package calculator;
 
-import java.util.EmptyStackException;
 
 /**
  * Class implements {@code Calculator} to evaluate Reverse Polish string expressions.
  * {@code RevPolishCalc} takes a {@code String} formatted for Reverse Polish Notation and evaluates
  * this string to find the result of the expression.
+ *
+ * @see <a href=
+ *      "https://isaaccomputerscience.org/concepts/dsa_toc_rpn?examBoard=all&stage=all">Inspiration
+ *      for the evaluation of reverse polish notation.</a>
  *
  * @author David Kidd
  */

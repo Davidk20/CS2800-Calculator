@@ -1,35 +1,69 @@
-<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><help_text>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=0..*</help_text><element><id>UMLClass</id><coordinates><x>750</x><y>1030</y><w>290</w><h>250</h></coordinates><panel_attributes>_cs2800::Stack_
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..*</help_text>
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1004</x>
+      <y>900</y>
+      <w>116</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>_calculator::Stack_
 bg=pink
 This class represents a 
 Stack of Entry values
 --
 *Attributes*
--size: integer
--entries: List&lt;Entry&gt;
+-Integer:size
+-List&lt;Entry&gt;: entries
 --
 *Responsibilities*
 +getSize(): Integer
 /.   Returns the number of entries in the stack/
-+push(entry: Entry)
++push(Entry: entry)
 /    Adds a new Entry to the Stack/
 +pop(): Entry {exception=EmptyStack}
 /    Returns (and removes) newest Entry/
 +top(): Entry {exception=EmptyStack}
 /    Return (but keeps) newset Entry/
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>760</x><y>760</y><w>270</w><h>140</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt; 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1012</x>
+      <y>656</y>
+      <w>124</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt; 
 bg=yellow
-_cs2800::Calculator_
+_calculator::Calculator_
 Allows calculation of 
 String Expressions
 --
 *Responsibilities*
 +evaluate(String: expression): float
      {exception=InvalidExpression}
-/    Evaluates and calculates a string expression/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1100</x><y>1470</y><w>210</w><h>150</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt; 
+/    Evaluates and calculates a string expression/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1144</x>
+      <y>1096</y>
+      <w>84</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt; 
 bg=orange
-_cs2800::Type_
+_calculator::Type_
 A list of the types of 
 value an Entry can represent
 --
@@ -37,15 +71,26 @@ _NUMBER_
 _SYMBOL_
 _STRING_
 _INVALID_
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>1350</y><w>290</w><h>400</h></coordinates><panel_attributes>_cs2800::Entry_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1004</x>
+      <y>1024</y>
+      <w>116</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>_calculator::Entry_
 bg=orange
 Values stored in a Stack
 --
 *Attributes*
--number: float
--symbol: Symbol
--str: String
--type: Type
+-Float: number
+-Symbol: symbol
+-String: str
+-Type: type
 --
 *Responsibilities*
 &lt;&lt;constructor&gt;&gt; +Entry(float value)
@@ -64,9 +109,20 @@ Values stored in a Stack
 +toString(): String
 /Returns a string representation of the entry/
 +hashCode(): int
-+equals(): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>1340</y><w>240</w><h>200</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt; 
++equals(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>884</x>
+      <y>1064</y>
+      <w>96</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt; 
 bg=orange
-_cs2800::Symbol_
+_calculator::Symbol_
 A list of the non-number tokens 
 possible in an expression
 --
@@ -78,31 +134,55 @@ _PLUS_
 _MINUS_
 _INVALID_
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>30</y><w>320</w><h>170</h></coordinates><panel_attributes>&lt;&lt;model&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1012</x>
+      <y>496</y>
+      <w>140</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;model&gt;&gt;
 bg=red
-_cs2800: CalcModel_
-Also shows the values of each of
-the Calculator's memories.
+_calculator: CalculatorModel_
+Class encapsulates both the Reverse Polish
+and Standard calculators in a model to allow
+Integration with the user interfaces.
 --
 *Attributes*
--revPolish: Calculator
--Standard: Calculator
+-RevPolishCalc: revPolish
+-StandardCalc: standard
 --
 *Responsibilities*
-+evaluate(expr: String, infix:boolean): float
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>760</y><w>270</w><h>260</h></coordinates><panel_attributes>bg=pink
-_cs2800::NumStack_
++evaluate(String: expression, boolean: isInfix): float
+/    Evaluates the expression by deciding the /
+/    appropriate calculator to use./</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>780</y>
+      <w>128</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+_calculator::NumStack_
 Since reverse Polish evaluation
 only uses a Stack of numeric values
 we provide a facade to hide details
 --
 *Attributes*
--numStack: Stack
+-Stack: numStack
 --
 *Responsibilities*
 +getSize(): Integer
 /    Returns the number of entries in the NumStack/
-+push(i: float)
++push(float: f)
 /    Adds a new float to the stack./
 +pop(): float 
                {exception=EmptyStack}
@@ -110,149 +190,657 @@ we provide a facade to hide details
 +isEmpty():boolean
 /    Returns true if the NumStack is empty/
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1060</x><y>760</y><w>290</w><h>260</h></coordinates><panel_attributes>bg=pink
-_cs2800::OpStack_
-Since the Shunting algorithm
-only uses a Stack of symbols 
-we provide a facade to hide details
---
-*Attributes*
--opStack: Stack
---
-*Responsibilities*
-+getSize() : Integer
-/    Returns the number of entries in the OpStack/
-+push(i: Symbol)
-/    Adds a new Symbol to the OpStack/
-+pop(): Symbol 
-                    {exception=EmptyStack}
-/    Returns and removes newest Symbol/
-+isEmpty():boolean
-/    Returns true if the stack is empty/
-
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1040</x><y>390</y><w>290</w><h>260</h></coordinates><panel_attributes>bg=yellow
-_cs2800::StandardCalc_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1168</x>
+      <y>624</y>
+      <w>140</w>
+      <h>124</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+&lt;&lt;Calculator&gt;&gt;
+_calculator::StandardCalc_
 Evaluates infix String Expressions
 --
 *Attributes*
--rpCalc: RevPolishCalc
--values: NumStack
--operators: OpStack
--stringBuilder: StringBuilder
+-RevPolishCalc: revPolishCalc
+-NumStack: values
+-OpStack: operators
+-StringBuilder: stringBuilder
 --
 *Responsibilities*
++getPrecedence(Symbol: op)
+/    Returns the precedence of a symbol to be used to/
+/    compare the importance of operators./
 +infixToPostfix(String: expression): string
     {exception=InvalidExpression}
 /    Converts and returns an infix expression in postfix/
 +evaluate(String: what): float
      {exception=InvalidExpression}
-/    Evaluates and calculates a string expression/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>440</y><w>260</w><h>170</h></coordinates><panel_attributes>bg=yellow
-_cs2800::RevPolishCalc_
+/    Evaluates and calculates a string expression/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>636</y>
+      <w>168</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+&lt;&lt;Calculator&gt;&gt;
+_calculator::RevPolishCalc_
 Evaluates Reverse Polish
 String Expressions
 --
 *Attributes*
--values: NumStack
+-NumStack: values
 --
 *Responsibilities*
++evaluateSubExpression(float: f1, Symbol operator, float f2): float
+     {exception=InvalidExpression}
+/    Evaluates a simple, two number expression returning the result. /
 +evaluate(String: expression): float
      {exception=InvalidExpression}
-/    Evaluates and calculates a string expression/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>190</y><w>220</w><h>270</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>200;10;10;250</additional_attributes></element><element><id>Relation</id><coordinates><x>910</x><y>190</y><w>240</w><h>220</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;220;200</additional_attributes></element><element><id>Relation</id><coordinates><x>1150</x><y>640</y><w>60</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;40;120</additional_attributes></element><element><id>Relation</id><coordinates><x>1030</x><y>1010</y><w>180</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-&lt;&lt;facade&gt;&gt;</panel_attributes><additional_attributes>160;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>1010</y><w>210</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+/    Evaluates and calculates a string expression/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>580</y>
+      <w>204</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>490.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1076</x>
+      <y>580</y>
+      <w>136</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;320.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1236</x>
+      <y>744</y>
+      <w>12</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>896</y>
+      <w>84</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+&lt;&lt;facade&gt;&gt;</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>888</y>
+      <w>92</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1pos=-50,20
-m1=&lt;&lt;facade&gt;&gt;</panel_attributes><additional_attributes>40;10;190;140</additional_attributes></element><element><id>Relation</id><coordinates><x>920</x><y>640</y><w>190</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;120;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>750</x><y>600</y><w>120</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>100;160;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>1270</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1030</x><y>1420</y><w>170</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;150;50</additional_attributes></element><element><id>Relation</id><coordinates><x>690</x><y>1450</y><w>80</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>60;30;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>190</x><y>680</y><w>230</w><h>170</h></coordinates><panel_attributes>&lt;&lt;view&gt;&gt;
-cs2800::GuiView
-A graphical window with 
-1. a text field for an expression
-2. a "calculate" button
-3. a radio button: 
-   "Reverse Polish/Infix"
+m1=&lt;&lt;facade&gt;&gt;</panel_attributes>
+    <additional_attributes>40.0;10.0;210.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1132</x>
+      <y>680</y>
+      <w>44</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>984</x>
+      <y>680</y>
+      <w>36</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1056</x>
+      <y>1000</y>
+      <w>12</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>1108</y>
+      <w>36</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>1072</y>
+      <w>36</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>344</x>
+      <y>692</y>
+      <w>128</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;view&gt;&gt;
+_calculator:GuiController_
+The controller for the GUI, handles the action
+of the calculate button and notifies the 
+CalculatorController on when to act.
 --
--expression: String
--answer: String
-bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>60</y><w>420</w><h>130</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>400;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>320</y><w>100</w><h>220</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>80;200;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>0</x><y>320</y><w>130</w><h>380</h></coordinates><panel_attributes>lt=&lt;.
-m2=&lt;&lt;Observer&gt;&gt;</panel_attributes><additional_attributes>10;360;50;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>20</y><w>310</w><h>310</h></coordinates><panel_attributes>&lt;&lt;controller&gt;&gt;
+*Attributes*
+-TextField: inputField
+-TextField: outputField
+-Button: evaluateButton
+-RadioButton: isInfix
+--
+*Responsibilities*
++getExpression(): String
+/    Collects the user input/
++setAnswer(str: String): void
+/    Returns the answer to the view/
++getExpressionType(): boolean
+/    Returns true if expression is infix/
++handleCalculate()
+/    Notified when the user wants to calculate/
+/    an expression, notifies the controller to/
+/    calculate and return the expression./
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>692</x>
+      <y>504</y>
+      <w>328</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>800.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>612</x>
+      <y>632</y>
+      <w>44</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+m2=&lt;&lt;Observer&gt;&gt;</panel_attributes>
+    <additional_attributes>70.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>488</y>
+      <w>144</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;controller&gt;&gt;
 bg=blue
-_cs2800:CalcController_
+_calculator:CalculatorController_
 Create view and model.
-Adds itself as an observer to the view
-so that (asynchronous) changes
-can be observed. 
+Observes the view so that
+changes can be acted upon
 --
 *Attributes*
--model: CalcModel
--view: CalcView
--isInfix: boolean
+-CalculatorModel: model
+-ViewInterface: view
+-boolean: isInfix
+-CalculatorController: instance
 --
 *Responsibilities*
-+calculate()
-Is notified when a 
-calculation is required
---
-+expressionType()
-Is notified when a change of 
-expression type is indicated
-group=2</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>600</y><w>110</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1380</x><y>710</y><w>270</w><h>310</h></coordinates><panel_attributes>bg=pink
-_cs2800::StrStack_
-The Shunting algorithm
-requires reversing an expression in 
-order to evaluate left to right - so 
-we provide a facade to hide details
---
-*Attributes*
--StrStack: Stack
---
-*Responsibilities*
-+getSize() : Integer
-/    Returns the number of entries in the OpStack/
-+isEmpty():boolean
-/    Returns true if the stack is empty/
-+push(str: String)
-/    Adds a new String to the Stack/
-+pop(): String 
-                {exception=EmptyStack}
-/    Returns and removes newest String/
-+reverse(): void
-/    Reverses the order of the StrStack/
++getInstance()
+/    Returns singular instance of CalculatorController or/
+/    creates one if one does not yet exist./
++setView(ViewInterface: view)
+/    Sets the controllers view./
++handleCalculate()
+/    Handles calculation of the expression, returning/
+/    the result to the view/
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1030</x><y>1010</y><w>500</w><h>230</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m1=&lt;&lt;facade&gt;&gt;
-m1pos=-20,40</panel_attributes><additional_attributes>480;10;10;210</additional_attributes></element><element><id>Relation</id><coordinates><x>1320</x><y>500</y><w>200</w><h>230</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;180;210</additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>0</y><w>350</w><h>400</h></coordinates><panel_attributes>valign=bottom
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>924</x>
+      <y>724</y>
+      <w>12</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>544</x>
+      <y>480</y>
+      <w>160</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>valign=bottom
 Controller
 layer=0
 fontsize=28
 fg=magenta
 bg=light_gray
-group=2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>500</y><w>440</w><h>400</h></coordinates><panel_attributes>valign=bottom
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>308</x>
+      <y>676</y>
+      <w>484</w>
+      <h>376</h>
+    </coordinates>
+    <panel_attributes>valign=bottom
 View Assembly
 fontsize=28
 fg=magenta
 bg=light_gray
-layer=-1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>520</y><w>310</w><h>140</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
-cs2800::ViewInterface
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>696</y>
+      <w>124</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+_calculator::ViewInterface_
 --
-Responsibilities
---
+*Responsibilities*
 +getExpression(): String
+/    Collects the user input/
 +setAnswer(str: String): void
-+addCalcObserver(f:Runnable): void
-+addTypeObserver(l:Consumer&lt;OpType&gt;):void
-bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>680</y><w>150</w><h>150</h></coordinates><panel_attributes>&lt;&lt;view&gt;&gt;
-cs2800::AsciiView
-A menu based View
+/    Returns the answer to the view/
++getExpressionType(): boolean
+/    Returns true if expression is infix/
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>656</x>
+      <y>792</y>
+      <w>116</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;view&gt;&gt;
+_calculator::AsciiView_
+A text-based View of the calculator
 --
--expression: String
--answer: String
+*Attributes*
+-CalculatorController: calcController
+-String: expression
+-boolean: isInfix
+-AsciiView: instance
 --
-Responsibilities
+*Responsibilities*
++getInstance()
+/    Returns singular instance of AsciiView or/
+/    creates one if one does not yet exist./
++getExpression(): String
+/    Collects the user input/
++setAnswer(str: String): void
+/    Returns the answer to the view/
++getExpressionType(): boolean
+/    Returns true if expression is infix/
++handleCalculate()
+/    Notified when the user wants to calculate/
+/    an expression, notifies the controller to/
+/    calculate and return the expression./
++runView()
+/    Runs the ASCII view for the user to /
+/    interact with./
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>756</y>
+      <w>28</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>716</y>
+      <w>116</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>270.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>728</y>
+      <w>224</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>540.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>984</x>
+      <y>644</y>
+      <w>192</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>460.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>512</x>
+      <y>804</y>
+      <w>124</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Driver&gt;&gt;
+_calculator::Driver_
+Handles running the program, the 
+main point of entry for the application
+and controls whether GUI or ASCII view is used.
 --
-+menu
-bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>320</y><w>170</w><h>380</h></coordinates><panel_attributes>lt=&lt;.
-m2=&lt;&lt;Observer&gt;&gt;</panel_attributes><additional_attributes>150;360;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>650</y><w>70</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>50;10;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>650</y><w>80</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;60;30</additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>0</y><w>1320</w><h>1760</h></coordinates><panel_attributes>                                                              
+*Responsibilities*
++main(String[]: args)
+/    Runs the Calculator. If run from/
+/    the .jar file then is run as a GUI/
+/    however if run from the command line/
+/    then it is run in ASCII mode./
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>632</x>
+      <y>804</y>
+      <w>32</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>860</y>
+      <w>136</w>
+      <h>164</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;application&gt;&gt;
+calculator::GuiView
+--
+A graphical window with 
+1. a text field for an expression
+2. a text field for the result
+3. a "calculate" button
+4. a radio button: 
+   "Reverse Polish/Infix"
+--
+*Attributes*
+-FXMLLoader: loader
+-GuiView instance
+--
+*Responsibilities*
++initialize()
+/    Once the JavaFX window is loaded, the/
+/    application is assigned to variable instance./
++getInstance()
+/    Returns singular instance of GuiView or/
+/    creates one if one does not yet exist./
++start(Stage: stage)
+     {exception=Exception}
+/    Main entry point for JavaFX applications./
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>872</y>
+      <w>48</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>404</x>
+      <y>832</y>
+      <w>12</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>620</y>
+      <w>152</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>360.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>632</y>
+      <w>48</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1156</x>
+      <y>1016</y>
+      <w>128</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;exception&gt;&gt; 
+bg=orange
+_calculator::InvalidEntryTypeException_
+Exception thrown when the Type
+of the latest setter does not match the
+Type of the getter that is being called.
+
+
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>1032</y>
+      <w>48</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1012</x>
+      <y>604</y>
+      <w>124</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;exception&gt;&gt; 
+bg=yellow
+_calculator::InvalidExpressionException_
+exception thrown when an invalid expression
+is passed into the calculator
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>796</x>
+      <y>480</y>
+      <w>620</w>
+      <h>724</h>
+    </coordinates>
+    <panel_attributes>                                                              
                                                               
                                                               
                                                               Model Assembly
-layer=0
 fontsize=28
 fg=magenta
-bg=light_gray</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+bg=light_gray
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>972</x>
+      <y>624</y>
+      <w>48</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1076</x>
+      <y>632</y>
+      <w>12</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1132</x>
+      <y>620</y>
+      <w>44</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1180</x>
+      <y>784</y>
+      <w>132</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+_calculator::OpStack_
+Since the Shunting algorithm
+only uses a Stack of symbols 
+we provide a facade to hide details
+--
+*Attributes*
+-Stack: opStack
+--
+*Responsibilities*
++getSize() : Integer
+/    Returns the number of entries in the OpStack/
++push(Symbol: symbol)
+/    Adds a new Symbol to the OpStack/
++pop(): Symbol 
+     {exception=EmptyStack}
+/    Returns and removes newest Symbol/
++isEmpty():boolean
+/    Returns true if the stack is empty/
+
+
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
