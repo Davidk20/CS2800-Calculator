@@ -1,7 +1,7 @@
 package calculator;
 
 /**
- * Creates the view and model. Observes the view so that changes can be observed.
+ * Creates the view and model. Observes the view so that changes can be acted upon.
  *
  * @author David Kidd
  */
@@ -42,8 +42,8 @@ public class CalculatorController {
   }
   
   /**
-   * Handles the calculation of the expression returning the result to the GUI. If an error occurs
-   * during evaluation, the error message is instead returned to the GUI.
+   * Handles the calculation of the expression returning the result to the view. If an error occurs
+   * during evaluation, the error message is instead returned to the view.
    */
   public void handleCalculate() {
     try {

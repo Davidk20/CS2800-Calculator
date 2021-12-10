@@ -34,16 +34,6 @@ public class GuiController implements ViewInterface {
    */
   @FXML
   private RadioButton isInfix;
-  /**
-   * One of the two buttons used to select expression type (postfix).
-   */
-  @FXML
-  private RadioButton isPostfix;
-  /**
-   * The group containing the two radio buttons used to facilitate toggling between states.
-   */
-  @FXML
-  private ToggleGroup expressionType;
 
   CalculatorController observer = CalculatorController.getInstance();
 

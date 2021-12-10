@@ -14,17 +14,17 @@ import javafx.stage.Stage;
  */
 public class GuiView extends Application {
   FXMLLoader loader;
-  
-  
-  // Singleton implementation
-  
+
+
+  // Singleton implementation - inspiration taken from MVCJavaFX example on moodle.
+
   private static GuiView instance = null;
-  
+
   @FXML
   private void initialize() {
     instance = this;
   }
-  
+
   /**
    * Returns the singular instance of GuiView or creates one if it has not been created yet.
    *
@@ -39,7 +39,7 @@ public class GuiView extends Application {
     }
     return instance;
   }
-    
+
   @Override
   public void start(Stage stage) throws Exception {
     loader = new FXMLLoader(getClass().getResource("/mainScreen.fxml"));
